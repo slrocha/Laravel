@@ -81,6 +81,8 @@ Route::group(['midleware' => ['web']], function(){
     
 });
 
+Route::get('/user','UserController@index');
+
 // Rotas para solicitar trocar de senha...
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
