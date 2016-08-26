@@ -21,6 +21,38 @@ use Illuminate\Http\Request;
 /**
  * Display All Tasks
  */
+
+Route::get('/excel','UserController@index');
+
+Route::get('pdf', function () {
+    $users= App\User::all();
+    $pdf = PDF::loadView('vista', ['users'=> $users]);
+    return $pdf->download('vista.pdf');
+});
+
+
+
+/*Route::get('excel', function () {
+
+    Excel::create('lista de usarios Excel', function($excel) {
+
+    $excel->sheet('Excel sheet', function($sheet) {
+
+        $users= App\User::all();
+
+        $sheet->loadView('vista',['users'=> $users]);
+
+    });
+
+})->export('csv');
+
+
+});*/
+
+
+
+//Route::get('/user','UserController@index');
+
 Route::get('/', function () {
   
     return view('tasks', [
@@ -47,7 +79,7 @@ Route::post('/task', function (Request $request) {
     $task = new Task;
     $task->name = $request->name;
     $task->save();
-
+  
     return redirect('/');
 });
 
