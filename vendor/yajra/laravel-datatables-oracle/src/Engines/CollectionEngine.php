@@ -91,7 +91,11 @@ class CollectionEngine extends BaseEngine
      */
     public function totalCount()
     {
+<<<<<<< HEAD
         return $this->totalRecords ? $this->totalRecords : $this->collection->count();
+=======
+        return $this->totalRecords ? $this->totalRecords : $this->count();
+>>>>>>> origin/master
     }
 
     /**
@@ -101,7 +105,11 @@ class CollectionEngine extends BaseEngine
      */
     public function count()
     {
+<<<<<<< HEAD
         return $this->collection->count() > $this->totalRecords ? $this->totalRecords : $this->collection->count();
+=======
+        return $this->collection->count();
+>>>>>>> origin/master
     }
 
     /**
@@ -207,7 +215,11 @@ class CollectionEngine extends BaseEngine
     {
         $this->collection = $this->collection->slice(
             $this->request['start'],
+<<<<<<< HEAD
             (int)$this->request['length'] > 0 ? $this->request['length'] : 10
+=======
+            (int) $this->request['length'] > 0 ? $this->request['length'] : 10
+>>>>>>> origin/master
         );
     }
 

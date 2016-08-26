@@ -11,6 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $users=DB::table('users')->get();
+<<<<<<< HEAD
         return view('vista', compact('users'));
 
         Excel::create('lista de usarios Excel', function($excel) {
@@ -19,5 +20,9 @@ class UserController extends Controller
 	        	$sheet->loadView('vista',['users'=> $users]);
 	    	});
 		})->export('csv');        
+=======
+        return view('user', compact('users'));
+        
+>>>>>>> origin/master
     } 
 }
