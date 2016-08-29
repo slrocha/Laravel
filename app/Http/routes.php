@@ -22,7 +22,8 @@ use Illuminate\Http\Request;
  * Display All Tasks
  */
 
-Route::get('/excel','UserController@index');
+Route::get('/user','UserController@index');
+Route::get('export','UserController@getExport');
 
 Route::get('pdf', function () {
     $users= App\User::all();
@@ -53,7 +54,7 @@ Route::get('pdf', function () {
 
 //Route::get('/user','UserController@index');
 
-Route::get('/', function () {
+/*Route::get('/', function () {
   
     return view('tasks', [
         'tasks' => Task::orderBy('created_at', 'asc')->get()
@@ -65,7 +66,7 @@ Route::get('/', function () {
 /**
  * Add A New Task
  */
-Route::post('/task', function (Request $request) {
+/*Route::post('/task', function (Request $request) {
         $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
     ]);
@@ -86,11 +87,11 @@ Route::post('/task', function (Request $request) {
 /**
  * Delete An Existing Task
  */
-Route::delete('/task/{id}', function ($id) {
+/*Route::delete('/task/{id}', function ($id) {
     Task::findOrFail($id)->delete();
 
     return redirect('/');
-});
+});*/
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
