@@ -23,7 +23,7 @@ use Illuminate\Http\Request;
  */
 
 Route::get('/user','UserController@index');
-Route::get('export','UserController@getExport');
+Route::get('/getExport','ExportController@getExport');
 
 Route::get('pdf', function () {
     $users= App\User::all();
