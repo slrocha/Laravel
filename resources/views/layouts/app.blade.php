@@ -85,13 +85,13 @@
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     
 
-    <script type="text/javascript">
+  <script type="text/javascript">
         $(document).ready(function(){
              $('.user').DataTable({
                 select:true,
             });
            
          });   
-    </script>   
+    </script>
 </body>
 </html>

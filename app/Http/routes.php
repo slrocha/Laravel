@@ -25,14 +25,6 @@ use Illuminate\Http\Request;
 Route::get('/user','UserController@index');
 Route::get('/getExport','ExportController@getExport');
 
-Route::get('pdf', function () {
-    $users= App\User::all();
-    $pdf = PDF::loadView('vista', ['users'=> $users]);
-    return $pdf->download('vista.pdf');
-});
-
-
-
 /*Route::get('excel', function () {
 
     Excel::create('lista de usarios Excel', function($excel) {
