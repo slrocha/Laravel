@@ -24,7 +24,7 @@ use Illuminate\Http\Request;
 
 Route::get('/user','UserController@index');
 Route::get('/getExport','ExportController@getExport');
-
+Route::get('htmltopdfview',array('as'=>'htmltopdfview','uses'=>'ExportController@htmltopdfview'));
 /*Route::get('excel', function () {
 
     Excel::create('lista de usarios Excel', function($excel) {

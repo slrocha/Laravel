@@ -13,7 +13,7 @@
                             <ul class="dropdown-menu" role="menu" id="export-menu">
                                 <li id="export-to-excel"><a href="{{URL::to('getExport')}}">Exportar para Excel</a></li>
                                 <li class="divider"></li>
-                                <li id="export-to-pdf"><a href="#">Exportar para PDF</a></li>
+                                <li id="export-to-pdf"><a href="{{URL::to('htmltopdfview')}}">Exportar para PDF</a></li>
                                 <li class="divider"></li>
                                 <li id="export-to-doc"><a href="#">Exportar para DOC</a></li>
                             </ul>                            
