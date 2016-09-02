@@ -19,4 +19,9 @@ class UserController extends Controller
         return view('user', compact('users'));
         
     }
+
+    public function registerUser(){
+
+    	return view('user.registerUser');
+    }
 }

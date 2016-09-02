@@ -13,7 +13,7 @@ use PDF;
 class ExportController extends Controller
 {
 
- public function getExport(){
+ public function getExportExcel(){
         /*$user= User::select('id', 'name', 'email')->get();
         Excel::create('Usuários Inativos', function($excel)use($user) {
             $excel->sheet('Excel sheet', function($sheet)use($user) {
@@ -56,16 +56,15 @@ class ExportController extends Controller
 
 }
 
- public function htmltopdfview(Request $request)
-        {
-            $users = User::all();
-            view()->share('users',$users);
-            if($request->has('download')){
-                $pdf = PDF::loadView('htmltopdfview');
-                return $pdf->download('Lista de Usuários');
-            }
-            return view('htmltopdfview');
+ public function htmltopdfview(Request $request){
+        $users = User::all();
+        view()->share('users',$users);
+        if($request->has('download')){
+            $pdf = PDF::loadView('htmltopdfview');
+            return $pdf->download('Lista de Usuários');
         }
+        return view('htmltopdfview');
+    }
 
 }
 

@@ -14,76 +14,15 @@
 use App\Task;
 use Illuminate\Http\Request;
 
-/*Route::get('/', function () {
-    return view('welcome');
-});
-
 /**
  * Display All Tasks
  */
 
+Route::post('/registerUser','UserController@registerUser');
 Route::get('/user','UserController@index');
-Route::get('/getExport','ExportController@getExport');
+Route::get('/getExportExcel','ExportController@getExportExcel');
 Route::get('htmltopdfview',array('as'=>'htmltopdfview','uses'=>'ExportController@htmltopdfview'));
-/*Route::get('excel', function () {
 
-    Excel::create('lista de usarios Excel', function($excel) {
-
-    $excel->sheet('Excel sheet', function($sheet) {
-
-        $users= App\User::all();
-
-        $sheet->loadView('vista',['users'=> $users]);
-
-    });
-
-})->export('csv');
-
-
-});*/
-
-
-
-//Route::get('/user','UserController@index');
-
-/*Route::get('/', function () {
-  
-    return view('tasks', [
-        'tasks' => Task::orderBy('created_at', 'asc')->get()
-    ]);
-
-});
-
-
-/**
- * Add A New Task
- */
-/*Route::post('/task', function (Request $request) {
-        $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-    ]);
-
-    if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-    $task = new Task;
-    $task->name = $request->name;
-    $task->save();
-  
-    return redirect('/');
-});
-
-/**
- * Delete An Existing Task
- */
-/*Route::delete('/task/{id}', function ($id) {
-    Task::findOrFail($id)->delete();
-
-    return redirect('/');
-});*/
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -106,7 +45,6 @@ Route::group(['midleware' => ['web']], function(){
     
 });
 
-Route::get('/user','UserController@index');
 
 // Rotas para solicitar trocar de senha...
 Route::get('password/email', 'Auth\PasswordController@getEmail');

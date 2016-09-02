@@ -11,13 +11,14 @@
                         <div class="dropdown">
                             <button type="button" class="btn btn-info toggle-dropdown" data-toggle="dropdown">Exportar <span class="caret"></span></button>                            
                             <ul class="dropdown-menu" role="menu" id="export-menu">
-                                <li id="export-to-excel"><a href="{{URL::to('getExport')}}">Exportar para Excel</a></li>
+                                <li id="export-to-excel"><a href="{{URL::to('getExportExcel')}}">Exportar para Excel</a></li>
                                 <li class="divider"></li>
                                 <li id="export-to-pdf"><a href="{{URL::to('htmltopdfview')}}">Exportar para PDF</a></li>
                                 <li class="divider"></li>
                                 <li id="export-to-doc"><a href="#">Exportar para DOC</a></li>
                             </ul>                            
-                        </div>                            
+                        </div>
+                        <a href="registerUser" class="btn btn-success" role="button">Cadastrar Servidor</a>  
                     </div>
                     <div class="table-responsive">                        
                         <table class="table table-hover table-bordered user">                              
