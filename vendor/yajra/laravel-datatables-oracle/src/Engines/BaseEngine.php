@@ -174,7 +174,6 @@ abstract class BaseEngine implements DataTableEngineContract
     protected $orderCallback;
 
     /**
-<<<<<<< HEAD
      * Skip paginate as needed.
      *
      * @var bool
@@ -182,8 +181,6 @@ abstract class BaseEngine implements DataTableEngineContract
     protected $skipPaging = false;
 
     /**
-=======
->>>>>>> origin/master
      * Array of data to append on json response.
      *
      * @var array
@@ -639,11 +636,7 @@ abstract class BaseEngine implements DataTableEngineContract
      */
     public function paginate()
     {
-<<<<<<< HEAD
         if ($this->request->isPaginationable() && ! $this->skipPaging) {
-=======
-        if ($this->request->isPaginationable()) {
->>>>>>> origin/master
             $this->paging();
         }
     }
@@ -852,7 +845,6 @@ abstract class BaseEngine implements DataTableEngineContract
     }
 
     /**
-<<<<<<< HEAD
      * Set total records manually.
      *
      * @param int $total
@@ -876,8 +868,6 @@ abstract class BaseEngine implements DataTableEngineContract
     }
 
     /**
-=======
->>>>>>> origin/master
      * Check if column is blacklisted.
      *
      * @param string $column
@@ -991,20 +981,4 @@ abstract class BaseEngine implements DataTableEngineContract
     {
         return in_array($this->database, ['oracle', 'oci8']);
     }
-<<<<<<< HEAD
-=======
-
-    /**
-     * Set total records manually.
-     *
-     * @param int $total
-     * @return $this
-     */
-    public function setTotalRecords($total)
-    {
-        $this->totalRecords = $total;
-
-        return $this;
-    }
->>>>>>> origin/master
 }

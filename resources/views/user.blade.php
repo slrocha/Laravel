@@ -15,10 +15,12 @@
                                 <li class="divider"></li>
                                 <li id="export-to-pdf"><a href="{{URL::to('htmltopdfview')}}">Exportar para PDF</a></li>
                                 <li class="divider"></li>
+                                <li id="export-to-csv"><a href="{{URL::to('getExportCSV')}}">Exportar para CSV</a></li>
+                                 <li class="divider"></li>
                                 <li id="export-to-doc"><a href="#">Exportar para DOC</a></li>
                             </ul>                            
                         </div>
-                        <a href="registerUser" class="btn btn-success" role="button">Cadastrar Servidor</a>  
+                        <a href="{{URL::to('registerUser')}}" class="btn btn-success" role="button">Cadastrar Servidor</a>  
                     </div>
                     <div class="table-responsive">                        
                         <table class="table table-hover table-bordered user">                              

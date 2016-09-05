@@ -8,14 +8,15 @@
 
 ##Change Log
 
-<<<<<<< HEAD
+### v6.18.1 - 2016-09-05
+- Fix to allow join of eager loaded column based on a HasMany-relationship.
+- Fix #732, PR #733 credits to @SRautila.
+
 ### v6.18.0 - 2016-08-25
 - Fix eager loaded model searching function. Fix #698 and #710.
 - Add method to skip pagination. Credits to @Nks PR #707
 - Fix collection filtered total records. If filtered total > total records, use total records.
 
-=======
->>>>>>> origin/master
 ### v6.17.1 - 2016-08-23
 - Use dompdf v0.7.x.
 - Implement/fix setTotalRecords on collection engine.

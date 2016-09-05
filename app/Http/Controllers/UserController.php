@@ -21,7 +21,6 @@ class UserController extends Controller
     }
 
     public function registerUser(){
-
     	return view('user.registerUser');
     }
 }

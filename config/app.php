@@ -152,6 +152,7 @@ return [
         Collective\Bus\BusServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Niiyz\Csv\CsvServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -213,6 +214,7 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Csv'       => Niiyz\Csv\Facades\Csv::class,
 
     ],
 
