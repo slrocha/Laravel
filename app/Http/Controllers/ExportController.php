@@ -59,11 +59,11 @@ class ExportController extends Controller
  public function htmltopdfview(Request $request){
         $users = User::all();
         view()->share('users',$users);
-        if($request->has('download')){
+      //  if($request->has('download')){
             $pdf = PDF::loadView('htmltopdfview');
             return $pdf->download('Lista de Usuários');
-        }
-        return view('htmltopdfview');
+        //}
+        //return view('htmltopdfview');
     }
 
 }
