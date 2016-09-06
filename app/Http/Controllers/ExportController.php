@@ -10,6 +10,9 @@ use DB;
 use Excel;
 use PDF;
 use Csv;
+use word;
+use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\Style\Font;
 
 class ExportController extends Controller
 {
@@ -44,7 +47,8 @@ class ExportController extends Controller
         view()->share('users',$users);
       //  if($request->has('download')){
             $pdf = PDF::loadView('htmltopdfview');
-            return $pdf->download('Lista de Usuários');
+           
+            return $pdf->download('Lista de Usuários.pdf');
         //}
         //return view('htmltopdfview');
     }
@@ -56,6 +60,45 @@ class ExportController extends Controller
         Csv::convertEncoding('UTF-8', 'SJIS-win');
         return Csv::download('users.csv');
     }
+
+     public function getExportPdf()
+     {
+        $users = User::all();
+        view()->share('users',$users);
+  
+            $pdf = PDF::loadView('user', ['users'=> $users]);
+            return $pdf->download('Lista.pdf');
+       
+    }
+
+      public function getExportdoc()
+     {
+
+            // Creating the new document...
+            $phpWord = new PhpWord();
+
+            /* Note: any element you append to a document must reside inside of a Section. */
+
+             // Adding an empty Section to the document...
+            $section = $phpWord->addSection();
+
+            // Adding Text element to the Section having font styled by default...
+            $section->addText(
+                htmlspecialchars(
+                    '"Learn from yesterday, live for today, hope for tomorrow. '
+                        . 'The important thing is not to stop questioning." '
+                        . '(Albert Einstein)'
+                )
+            );
+
+            // Saving the document as HTML file...
+            $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
+            $objWriter->save('helloWorld.html');
+
+
+        }
+
+
 
 }
 

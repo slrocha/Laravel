@@ -27,6 +27,10 @@ Route::get('/index','FunciController@registerUser');
 Route::get('/getExportCSV','ExportController@getExportCSV');
 Route::get('/user','UserController@index');
 Route::get('/getExportExcel','ExportController@getExportExcel');
+
+
+Route::get('/getExportdoc','ExportController@getExportdoc');
+Route::get('/getExportPdf','ExportController@getExportPdf');
 Route::get('htmltopdfview',array('as'=>'htmltopdfview','uses'=>'ExportController@htmltopdfview'));
 
 
