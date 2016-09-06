@@ -17,7 +17,7 @@
                                 <li class="divider"></li>
                                 <li id="export-to-csv"><a href="{{URL::to('getExportCSV')}}">Exportar para CSV</a></li>
                                  <li class="divider"></li>
-                                <li id="export-to-doc"><a href="#">Exportar para DOC</a></li>
+                                <li id="export-to-doc"><a href="{{URL::to('getExportdoc')}}">Exportar para DOC</a></li>
                             </ul>                            
                         </div>
                         <a href="{{URL::to('registerUser')}}" class="btn btn-success" role="button">Cadastrar Servidor</a>  
