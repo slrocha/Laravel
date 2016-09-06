@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use App\User;
-use Excel;
+
+
 
 class UserController extends Controller
 {
@@ -20,7 +21,6 @@ class UserController extends Controller
         
     }
 
-    public function registerUser(){
-    	return view('user.registerUser');
-    }
+    
+
 }
