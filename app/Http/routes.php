@@ -18,11 +18,12 @@ use Illuminate\Http\Request;
  * Display All Tasks
  */
 
-   Route::get('/cadastrar', function() {
+ /* Route::get('/cadastrar', function() {
         return view('user.registerUser');
-   });
+   });*/
 
-Route::post('cadastrar','UserController@registerUser');
+Route::post('/saveServidor','FunciController@saveServidor');
+Route::get('/index','FunciController@registerUser');
 Route::get('/getExportCSV','ExportController@getExportCSV');
 Route::get('/user','UserController@index');
 Route::get('/getExportExcel','ExportController@getExportExcel');
