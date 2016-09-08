@@ -57,7 +57,7 @@
 
                     {{Form::textarea('obs', null, array('class'=>'form-control'))}}
 
-                    {{ Form::submit('Cadastrar Servidor', array('class' => 'btn btn-success')) }}
+                    {{ Form::submit('Salvar Alterações', array('class' => 'btn btn-success')) }}
 
                     {{ Form::close() }}
                 </div>
