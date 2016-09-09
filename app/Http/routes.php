@@ -55,6 +55,10 @@ Route::group(['midleware' => ['web']], function(){
    Route::get('/', function() {
         return view('welcome');
    });
+
+ Route::group(['prefix'=>'admin'], function(){
+ 	route::get('system',['uses'=>'SystemController@index']);
+ }) ; 
     
 });
 

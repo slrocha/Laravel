@@ -31,5 +31,15 @@ class TabelaFuncionarioSeeder extends Seeder {
         }
     }
 
-}
+        public function run(){
+            DB::table('admins')->insert([
+                'name'=>'Laique Admin',
+                'email'=>'laiquesantana@hotmail.com',
+                'password'=>hash::make('123456'),
+
+                ]);
+
+            }
+
+    }
 }
