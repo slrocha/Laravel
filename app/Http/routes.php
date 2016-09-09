@@ -26,6 +26,8 @@ Route::post('/saveServidor','FunciController@saveServidor');
 Route::get('/index','FunciController@registerUser');
 Route::get('user/edit/{id}','FunciController@edit');
 Route::get('/user','UserController@index');
+Route::get('/registerUser','FunciController@registerUser');
+
 
 
 /* Rotas que redirecionam para os metodos de exportações de arquivos em formatos diversos.*/
@@ -34,7 +36,7 @@ Route::get('/getExportExcel','ExportController@getExportExcel');
 Route::get('/getExportCSV','ExportController@getExportCSV');
 Route::get('/getExportdoc','ExportController@getExportdoc');
 Route::get('/getExportPdf','ExportController@getExportPdf');
-Route::get('htmltopdfview',array('as'=>'htmltopdfview','uses'=>'ExportController@htmltopdfview'));
+//Route::get('htmltopdfview',array('as'=>'htmltopdfview','uses'=>'ExportController@htmltopdfview'));
 
 
 // Authentication routes...
