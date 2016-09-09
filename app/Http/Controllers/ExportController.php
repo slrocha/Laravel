@@ -42,15 +42,10 @@ class ExportController extends Controller
         ob_flush();
     }
 
-    public function htmltopdfview(Request $request){
-        $users = User::all();
-        view()->share('users',$users);
-      //  if($request->has('download')){
-            $pdf = PDF::loadView('htmltopdfview');
-           
-            return $pdf->download('Lista de Usuários.pdf');
-        //}
-        //return view('htmltopdfview');
+    public function getExportPdf(){
+        $users = User::all();    
+        $pdf = PDF::loadView('user.htmlToPDF', ['users'=> $users]);
+        return $pdf->download('Lista.pdf');
     }
 
     public function getExportCSV(){
@@ -59,16 +54,6 @@ class ExportController extends Controller
         Csv::create($users, $header);
         Csv::convertEncoding('UTF-8', 'SJIS-win');
         return Csv::download('users.csv');
-    }
-
-     public function getExportPdf()
-     {
-        $users = User::all();
-        view()->share('users',$users);
-  
-            $pdf = PDF::loadView('user', ['users'=> $users]);
-            return $pdf->download('Lista.pdf');
-       
     }
 
       public function getExportdoc()
